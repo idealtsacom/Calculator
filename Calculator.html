@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+.Heading{
+    color: rgb(32, 32, 32);
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 40px;
+   
+}
+.container{
+    height: 28rem;
+    width:30rem;
+ 
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 60px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.nb{
+    height: 50px;
+    width: 22rem;
+    border-radius: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    font-size: 20px;
+    font-weight: 200;
+}
+input[type="button"] { 
+             height: 60px;
+             width: 100px;
+             margin-top: 20px;
+             margin-left: 10px;
+             border-radius: 20px;
+             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             font-size: 20px;
+             font-weight: 200;
+        } 
+        .btn{
+            height: 60px;
+            width: 90px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-size: 20px;
+            font-weight: 200;
+            border-radius: 20px;
+        }
+</style>
+
+<body>
+    <h class="Heading">Calculator</h>
+    <div class="container">
+        <input type="text" class="nb" id="result">
+        <button onclick="clearDisplay()"  class="btn">C</button>
+        <tr> 
+            <td><input type="button" value="1" id="result"   onclick="dis('1')"
+                       > </td> 
+            <td><input type="button" value="2" id="result" onclick="dis('2')"
+                        > </td> 
+            <td><input type="button" value="3" id="result" onclick="dis('3')"
+                       > </td> 
+            <td><input type="button" value="/"id="result" onclick="dis('/')"
+                      > </td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="4" id="result" onclick="dis('4')"
+                        > </td> 
+            <td><input type="button" value="5" id="result" onclick="dis('5')"
+                        > </td> 
+            <td><input type="button" value="6" id="result" onclick="dis('6')"
+                   > </td> 
+            <td><input type="button" value="*" id="result" onclick="dis('*')"
+                        > </td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="7" id="result" onclick="dis('7')" > </td> 
+            <td><input type="button" value="8" id="result" onclick="dis('8')"> </td> 
+            <td><input type="button" value="9" id="result" onclick="dis('9')"> </td> 
+            <td><input type="button" value="-" id="result" onclick="dis('-')"> </td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="0" id="result" onclick="dis('0')"> </td> 
+            <td><input type="button" value="." id="result" onclick="dis('.')" > </td> 
+   
+            <td><input type="button" value="=" id="result" onclick="solve()"> </td> 
+  
+            <td><input type="button" value="+" id="result" onclick="dis('+')"> </td> 
+        </tr>
+
+    </div>
+    <script>
+        function dis(val){
+            document.getElementById("result").value+=val;
+            return val;
+        }
+        function solve(){
+            let x = document.getElementById("result").value;
+            let y = eval(x)
+            document.getElementById("result").value = y;
+            return y;
+        }
+        function clearDisplay(){
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>
